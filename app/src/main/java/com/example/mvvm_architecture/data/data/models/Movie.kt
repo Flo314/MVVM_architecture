@@ -2,7 +2,7 @@ package com.example.mvvm_architecture.data.data.models
 
 import com.google.gson.annotations.SerializedName
 
-data class Result (
+data class Movie (
 
     val id: Int,
     @SerializedName("poster_path")

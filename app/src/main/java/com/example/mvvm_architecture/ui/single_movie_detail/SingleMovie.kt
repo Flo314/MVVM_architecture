@@ -1,4 +1,4 @@
-package com.example.mvvm_architecture.single_movie_detail
+package com.example.mvvm_architecture.ui.single_movie_detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -28,7 +28,7 @@ class SingleMovie : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_single_movie)
 
-        val movieId = intent.getIntExtra("id", 1)
+        val movieId: Int = intent.getIntExtra("id", 1)
 
         val apiService: ITheMovieDb = TheMovieDbClient.getClient()
         movieRepository = MovieDetailsRepository(apiService)
@@ -65,6 +65,7 @@ class SingleMovie : AppCompatActivity() {
 
     }
 
+    @Suppress("UNCHECKED_CAST")
     private fun getViewModel(movieId: Int) : SingleMovieViewModel {
 
         return ViewModelProviders.of(this, object : ViewModelProvider.Factory {

@@ -14,12 +14,14 @@ class NetworkState(val state : States, val msg: String) {
         val LOADED : NetworkState
         val LOADING : NetworkState
         val ERROR : NetworkState
+        val ENDOFLIST : NetworkState
 
         // initialisation
         init {
             LOADED = NetworkState(States.SUCCESS,  "Success")
             LOADING = NetworkState(States.RUNNING,  "Running")
             ERROR = NetworkState(States.FAILED,  "Something went wrong")
+            ENDOFLIST = NetworkState(States.FAILED, "You have reached the end")
         }
 
     }
